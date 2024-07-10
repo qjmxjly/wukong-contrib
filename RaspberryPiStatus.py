@@ -60,7 +60,7 @@ class Plugin(AbstractPlugin):
             self.say(u'处理器温度' + str(status['cpu_tmp']) + u'度,内存使用百分之' + str(status['ram_percentage']) + u',存储使用百分之' + str(status['disk_percentage']))
         except Exception as e:
             logger.error(e)
-            self.say(u'抱歉，我没有获取到树莓派状态', cache=True)
+            self.say(u'抱歉，我没有获取到主机状态', cache=True)
 
     def isValid(self, text, parsed):
-        return any(word in text for word in [u"树莓派状态", u"状态", u"运行状态"])
+        return any(word in text for word in [u"主机状态", u"运行状态"])

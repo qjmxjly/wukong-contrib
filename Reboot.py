@@ -15,7 +15,7 @@ class Plugin(AbstractPlugin):
         if input is not None and any(word in input for word in [u"确认", u"好", u"是", u"OK"]):
             self.say('授权成功，开始进行相关操作', cache=True)
             time.sleep(3)
-            subprocess.Popen("reboot -f", shell=True)
+            subprocess.Popen("sudo reboot -f", shell=True)
             return
         self.say('授权失败，操作已取消，请重新尝试', cache=True)
 
